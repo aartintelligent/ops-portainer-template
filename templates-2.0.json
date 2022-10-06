@@ -70,7 +70,7 @@
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
-        "url": "https://raw.githubusercontent.com/aartintelligent/portainer-template",
+        "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/registry/docker-stack.yaml"
       },
       "env": [
