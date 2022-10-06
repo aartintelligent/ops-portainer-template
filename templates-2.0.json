@@ -11,6 +11,7 @@
         "Ingress"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/traefik/docker-stack.yaml"
@@ -45,6 +46,7 @@
         "Swarm"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/portainer/docker-stack.yaml"
@@ -66,7 +68,7 @@
         "Registry"
       ],
       "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/stacks/gocd-agent-centos/img.png",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://raw.githubusercontent.com/aartintelligent/portainer-template",
         "stackfile": "stacks/registry/docker-stack.yaml"
@@ -87,6 +89,7 @@
         "Gocd"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd/docker-stack.yaml"
@@ -108,6 +111,7 @@
         "Build"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd-agent-alpine/docker-stack.yaml"
@@ -141,6 +145,7 @@
         "Build"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd-agent-centos/docker-stack.yaml"
@@ -174,6 +179,7 @@
         "Build"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd-agent-debian/docker-stack.yaml"
