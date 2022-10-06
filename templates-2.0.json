@@ -1,0 +1,266 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 2,
+      "title": "Traefik",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Traefik",
+        "Ingress"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/traefik/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        },
+        {
+          "name": "EMAIL",
+          "label": "Email"
+        },
+        {
+          "name": "USERNAME",
+          "label": "Username"
+        },
+        {
+          "name": "PASSWORD_HASHED",
+          "label": "Password hashed"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Portainer",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Portainer",
+        "Docker",
+        "Swarm"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/portainer/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Docker Registry",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Docker",
+        "Registry"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/docker-registry/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd Agent Alpine",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd",
+        "Build"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd-agent-alpine/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "GO_SERVER_URL",
+          "label": "Go service url"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_KEY",
+          "label": "Auto register key"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
+          "label": "Auto register environments"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_RESOURCES",
+          "label": "Auto register resources"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd Agent Centos",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd",
+        "Build"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd-agent-centos/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "GO_SERVER_URL",
+          "label": "Go service url"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_KEY",
+          "label": "Auto register key"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
+          "label": "Auto register environments"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_RESOURCES",
+          "label": "Auto register resources"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd Agent Debian",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd",
+        "Build"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd-agent-debian/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "GO_SERVER_URL",
+          "label": "Go service url"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_KEY",
+          "label": "Auto register key"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
+          "label": "Auto register environments"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_RESOURCES",
+          "label": "Auto register resources"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd Agent Docker Dind",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd",
+        "Build"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd-agent-docker-dind/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "GO_SERVER_URL",
+          "label": "Go service url"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_KEY",
+          "label": "Auto register key"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
+          "label": "Auto register environments"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_RESOURCES",
+          "label": "Auto register resources"
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Gocd Agent Ubuntu",
+      "description": "",
+      "note": "",
+      "categories": [
+        "Gocd",
+        "Build"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/gocd-agent-ubuntu/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "GO_SERVER_URL",
+          "label": "Go service url"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_KEY",
+          "label": "Auto register key"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
+          "label": "Auto register environments"
+        },
+        {
+          "name": "AGENT_AUTO_REGISTER_RESOURCES",
+          "label": "Auto register resources"
+        }
+      ]
+    }
+  ]
+}

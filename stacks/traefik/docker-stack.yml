@@ -1,0 +1,56 @@
+version: '3.3'
+
+services:
+
+  traefik:
+    image: traefik:latest
+    command:
+      - --providers.docker
+      - --providers.docker.constraints=Label(`traefik.constraint-label`, `traefik-proxy`)
+      - --providers.docker.exposedbydefault=false
+      - --providers.docker.swarmmode
+      - --entrypoints.http.address=:80
+      - --entrypoints.https.address=:443
+      - --certificatesresolvers.le.acme.email=${EMAIL?Variable not set}
+      - --certificatesresolvers.le.acme.storage=/certificates/acme.json
+      - --certificatesresolvers.le.acme.tlschallenge=true
+      - --accesslog
+      - --log
+      - --api
+    volumes:
+      - traefik-data:/certificates
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - traefik-network
+    ports:
+      - 80:80
+      - 443:443
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          - node.platform.os == linux
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-network
+        - traefik.constraint-label=traefik-proxy
+        - traefik.http.middlewares.admin-auth.basicauth.users=${USERNAME?Variable not set}:${PASSWORD_HASHED?Variable not set}
+        - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+        - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+        - traefik.http.routers.traefik-network-http.rule=Host(`traefik.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.traefik-network-http.entrypoints=http
+        - traefik.http.routers.traefik-network-http.middlewares=https-redirect
+        - traefik.http.routers.traefik-network-https.rule=Host(`traefik.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.traefik-network-https.entrypoints=https
+        - traefik.http.routers.traefik-network-https.tls=true
+        - traefik.http.routers.traefik-network-https.service=api@internal
+        - traefik.http.routers.traefik-network-https.tls.certresolver=le
+        - traefik.http.routers.traefik-network-https.middlewares=admin-auth
+        - traefik.http.services.traefik-network.loadbalancer.server.port=8080
+
+networks:
+  traefik-network:
+    external: true
+
+volumes:
+  traefik-data:

@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+
+  agent:
+    image: gocd/gocd-agent-debian-11:v22.2.0
+    environment:
+      - GO_SERVER_URL=${GO_SERVER_URL?Variable not set}
+      - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
+      - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
+      - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
+    networks:
+      - gocd-network
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+          - node.platform.os == linux
+
+networks:
+  gocd-network:
+    external: true

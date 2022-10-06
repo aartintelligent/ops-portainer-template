@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+
+  registry:
+    image: registry:2
+    volumes:
+      - registry-data:/var/lib/registry
+    networks:
+      - registry-network
+      - traefik-network
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+          - node.platform.os == linux
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-network
+        - traefik.constraint-label=traefik-proxy
+        - traefik.http.routers.registry-http.rule=Host(`registry.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.registry-http.entrypoints=http
+        - traefik.http.routers.registry-http.middlewares=https-redirect
+        - traefik.http.routers.registry-https.rule=Host(`registry.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.registry-https.entrypoints=https
+        - traefik.http.routers.registry-https.tls=true
+        - traefik.http.routers.registry-https.tls.certresolver=le
+        - traefik.http.services.registry.loadbalancer.server.port=5000
+
+networks:
+  registry-network:
+    attachable: true
+  traefik-network:
+    external: true
+
+volumes:
+  registry-data:

@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+
+  gocd:
+    image: gocd/gocd-server:v22.2.0
+    volumes:
+      - gocd-data:/godata
+    networks:
+      - gocd-network
+      - traefik-network
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+          - node.platform.os == linux
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-network
+        - traefik.constraint-label=traefik-proxy
+        - traefik.http.routers.gocd-http.rule=Host(`gocd.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.gocd-http.entrypoints=http
+        - traefik.http.routers.gocd-http.middlewares=https-redirect
+        - traefik.http.routers.gocd-https.rule=Host(`gocd.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.gocd-https.entrypoints=https
+        - traefik.http.routers.gocd-https.tls=true
+        - traefik.http.routers.gocd-https.tls.certresolver=le
+        - traefik.http.services.gocd.loadbalancer.server.port=8153
+
+networks:
+  gocd-network:
+    attachable: true
+  traefik-network:
+    external: true
+
+volumes:
+  gocd-data:
