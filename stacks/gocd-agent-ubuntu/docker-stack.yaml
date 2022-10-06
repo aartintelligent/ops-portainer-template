@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   agent:
-    image: gocd/gocd-agent-ubuntu-22.04:v22.2.0
+    image: docker.io/gocd/gocd-agent-ubuntu-22.04:v22.2.0
     environment:
       - GO_SERVER_URL=${GO_SERVER_URL?Variable not set}
       - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}

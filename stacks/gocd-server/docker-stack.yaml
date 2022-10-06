@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   gocd:
-    image: gocd/gocd-server:v22.2.0
+    image: docker.io/gocd/gocd-server:v22.2.0
     volumes:
       - gocd-data:/godata
     networks:
