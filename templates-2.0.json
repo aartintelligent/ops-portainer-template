@@ -4,7 +4,7 @@
     {
       "type": 2,
       "title": "Traefik",
-      "description": "",
+      "description": "Routing your docker swarm",
       "note": "",
       "categories": [
         "Traefik",
@@ -37,7 +37,7 @@
     {
       "type": 2,
       "title": "Portainer",
-      "description": "",
+      "description": "Manager your docker swarm",
       "note": "",
       "categories": [
         "Portainer",
@@ -59,7 +59,7 @@
     {
       "type": 2,
       "title": "Registry",
-      "description": "",
+      "description": "Register your docker image",
       "note": "",
       "categories": [
         "Docker",
@@ -81,7 +81,7 @@
     {
       "type": 2,
       "title": "Gocd Server",
-      "description": "",
+      "description": "Pipeline to build your work",
       "note": "",
       "categories": [
         "Gocd"
@@ -101,7 +101,7 @@
     {
       "type": 2,
       "title": "Gocd Agent Alpine",
-      "description": "",
+      "description": "Pipeline agent",
       "note": "",
       "categories": [
         "Gocd",
@@ -134,7 +134,7 @@
     {
       "type": 2,
       "title": "Gocd Agent Centos",
-      "description": "",
+      "description": "Pipeline agent",
       "note": "",
       "categories": [
         "Gocd",
@@ -167,7 +167,7 @@
     {
       "type": 2,
       "title": "Gocd Agent Debian",
-      "description": "",
+      "description": "Pipeline agent",
       "note": "",
       "categories": [
         "Gocd",
@@ -200,7 +200,7 @@
     {
       "type": 2,
       "title": "Gocd Agent Docker Dind",
-      "description": "",
+      "description": "Pipeline agent",
       "note": "",
       "categories": [
         "Gocd",
@@ -233,7 +233,7 @@
     {
       "type": 2,
       "title": "Gocd Agent Ubuntu",
-      "description": "",
+      "description": "Pipeline agent",
       "note": "",
       "categories": [
         "Gocd",
