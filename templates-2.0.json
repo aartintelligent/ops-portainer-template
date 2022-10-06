@@ -58,7 +58,7 @@
     },
     {
       "type": 2,
-      "title": "Docker Registry",
+      "title": "Registry",
       "description": "",
       "note": "",
       "categories": [
@@ -66,8 +66,9 @@
         "Registry"
       ],
       "platform": "linux",
+      "logo": "https://github.com/aartintelligent/portainer-template",
       "repository": {
-        "url": "https://github.com/aartintelligent/portainer-template",
+        "url": "https://github.com/aartintelligent/portainer-template/stacks/docker-registry/image.png",
         "stackfile": "stacks/docker-registry/docker-stack.yaml"
       },
       "env": [
@@ -79,7 +80,7 @@
     },
     {
       "type": 2,
-      "title": "Gocd",
+      "title": "Gocd Server",
       "description": "",
       "note": "",
       "categories": [
