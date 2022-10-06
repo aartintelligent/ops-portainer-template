@@ -213,6 +213,7 @@
         "Build"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd-agent-docker-dind/docker-stack.yaml"
@@ -246,6 +247,7 @@
         "Build"
       ],
       "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
         "stackfile": "stacks/gocd-agent-ubuntu/docker-stack.yaml"
