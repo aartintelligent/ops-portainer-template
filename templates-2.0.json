@@ -38,7 +38,7 @@
     {
       "type": 2,
       "title": "Portainer",
-      "description": "Manager your docker swarm",
+      "description": "Manage your docker swarm",
       "note": "",
       "categories": [
         "Portainer",
