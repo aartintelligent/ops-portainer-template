@@ -68,8 +68,8 @@
       "platform": "linux",
       "logo": "https://github.com/aartintelligent/portainer-template",
       "repository": {
-        "url": "https://github.com/aartintelligent/portainer-template/stacks/docker-registry/image.png",
-        "stackfile": "stacks/docker-registry/docker-stack.yaml"
+        "url": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/stacks/gocd-agent-centos/img.png",
+        "stackfile": "stacks/registry/docker-stack.yaml"
       },
       "env": [
         {
