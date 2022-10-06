@@ -66,9 +66,9 @@
         "Registry"
       ],
       "platform": "linux",
-      "logo": "https://github.com/aartintelligent/portainer-template",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/stacks/gocd-agent-centos/img.png",
       "repository": {
-        "url": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/stacks/gocd-agent-centos/img.png",
+        "url": "https://raw.githubusercontent.com/aartintelligent/portainer-template",
         "stackfile": "stacks/registry/docker-stack.yaml"
       },
       "env": [
