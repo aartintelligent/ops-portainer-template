@@ -5,10 +5,11 @@ services:
   openldap:
     image: docker.io/bitnami/openldap:2
     environment:
-      - LDAP_ADMIN_USERNAME=${ADMIN_USERNAME?Variable not set}
-      - LDAP_ADMIN_PASSWORD=${ADMIN_PASSWORD?Variable not set}
-      - LDAP_USERS=${USER_NAMES?Variable not set}
-      - LDAP_PASSWORDS=${USER_PASSWORDS?Variable not set}
+      - LDAP_ADMIN_USERNAME=${LDAP_ADMIN_USERNAME?Variable not set}
+      - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD?Variable not set}
+      - LDAP_USER_DC=${LDAP_USER_DC?Variable not set}
+      - LDAP_USERS=${LDAP_USERS?Variable not set}
+      - LDAP_PASSWORDS=${LDAP_PASSWORDS?Variable not set}
     networks:
       - openldap-network
     volumes:
