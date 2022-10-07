@@ -3,18 +3,13 @@ version: '3.3'
 services:
 
   openldap:
-    image: docker.io/bitnami/openldap:2
+    image: docker.io/osixia/openldap:latest
     environment:
-      - LDAP_ADMIN_USERNAME=${LDAP_ADMIN_USERNAME?Variable not set}
+      - LDAP_ORGANISATION=${LDAP_ORGANISATION?Variable not set}
+      - LDAP_DOMAIN=${LDAP_DOMAIN?Variable not set}
       - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD?Variable not set}
-      - LDAP_GROUP=${LDAP_GROUP?Variable not set}
-      - LDAP_USER_DC=${LDAP_USER_DC?Variable not set}
-      - LDAP_USERS=${LDAP_USERS?Variable not set}
-      - LDAP_PASSWORDS=${LDAP_PASSWORDS?Variable not set}
     networks:
       - openldap-network
-    volumes:
-      - openldap-data:/bitnami/openldap
     deploy:
       placement:
         constraints:
@@ -36,6 +31,3 @@ services:
 networks:
   openldap-network:
     attachable: true
-
-volumes:
-  openldap-data:

@@ -3,18 +3,18 @@
   "templates": [
     {
       "type": 2,
-      "title": "Bitnami OpenLdap",
+      "title": "Osixia OpenLdap",
       "description": "Ldap provider",
       "note": "",
       "categories": [
-        "Bitnami",
+        "Osixia",
         "Ldap"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
-        "stackfile": "stacks/bitnami-openldap/docker-stack.yaml"
+        "stackfile": "stacks/osixia-openldap/docker-stack.yaml"
       },
       "env": [
         {
@@ -22,28 +22,16 @@
           "label": "Domain"
         },
         {
-          "name": "ADMIN_USERNAME",
-          "label": "Admin user"
+          "name": "LDAP_ORGANISATION",
+          "label": "Ldap organisation"
         },
         {
-          "name": "ADMIN_PASSWORD",
-          "label": "Admin password"
+          "name": "LDAP_DOMAIN",
+          "label": "Ldap domain"
         },
         {
-          "name": "LDAP_GROUP",
-          "label": "Group"
-        },
-        {
-          "name": "LDAP_USER_DC",
-          "label": "User DC"
-        },
-        {
-          "name": "USER_NAMES",
-          "label": "User names"
-        },
-        {
-          "name": "USER_PASSWORDS",
-          "label": "User passwords"
+          "name": "LDAP_ADMIN_PASSWORD",
+          "label": "Ldap admin password"
         }
       ]
     },
