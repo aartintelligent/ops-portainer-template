@@ -18,6 +18,10 @@
       },
       "env": [
         {
+          "name": "DOMAIN",
+          "label": "Domain"
+        },
+        {
           "name": "ADMIN_USERNAME",
           "label": "Admin user"
         },
