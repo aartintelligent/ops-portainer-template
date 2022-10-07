@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   vault:
-    image: vault:latest
+    image: docker.io/vault:latest
     environment:
       - VAULT_ADDR=https://vault.${DOMAIN?Variable not set}
       - VAULT_LOCAL_CONFIG=${VAULT_LOCAL_CONFIG?Variable not set}
