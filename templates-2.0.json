@@ -171,7 +171,7 @@
       "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/ops-portainer-template",
-        "stackfile": "stacks/gocd-agent-docker-dind/docker-stack.yaml"
+        "stackfile": "stacks/gocd-agent-docker/docker-stack.yaml"
       },
       "env": [
         {
