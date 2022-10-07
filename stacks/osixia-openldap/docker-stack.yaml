@@ -28,8 +28,7 @@ services:
         - traefik.http.routers.openldap-https.entrypoints=https
         - traefik.http.routers.openldap-https.tls=true
         - traefik.http.routers.openldap-https.tls.certresolver=le
-        - traefik.http.services.openldap-389.loadbalancer.server.port=389
-        - traefik.http.services.openldap-636.loadbalancer.server.port=636
+        - traefik.http.services.openldap.loadbalancer.server.port=636
 
 networks:
   openldap-network:
