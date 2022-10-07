@@ -10,6 +10,8 @@ services:
       - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD?Variable not set}
     networks:
       - openldap-network
+    volumes:
+      - openldap-data:/openldap
     deploy:
       placement:
         constraints:
@@ -31,3 +33,6 @@ services:
 networks:
   openldap-network:
     attachable: true
+
+volumes:
+  openldap-data:
