@@ -148,7 +148,7 @@
     },
     {
       "type": 2,
-      "title": "Gocd Agent Docker Dind",
+      "title": "Gocd Agent Ubuntu",
       "description": "Pipeline agent",
       "note": "",
       "categories": [
@@ -159,7 +159,7 @@
       "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
-        "stackfile": "stacks/gocd-agent-docker-dind/docker-stack.yaml"
+        "stackfile": "stacks/gocd-agent-ubuntu/docker-stack.yaml"
       },
       "env": [
         {
@@ -182,7 +182,7 @@
     },
     {
       "type": 2,
-      "title": "Gocd Agent Ubuntu",
+      "title": "Gocd Agent Docker Dind",
       "description": "Pipeline agent",
       "note": "",
       "categories": [
@@ -193,7 +193,7 @@
       "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
       "repository": {
         "url": "https://github.com/aartintelligent/portainer-template",
-        "stackfile": "stacks/gocd-agent-ubuntu/docker-stack.yaml"
+        "stackfile": "stacks/gocd-agent-docker-dind/docker-stack.yaml"
       },
       "env": [
         {
