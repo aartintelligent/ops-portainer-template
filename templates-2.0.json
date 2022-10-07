@@ -48,11 +48,15 @@
         },
         {
           "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
-          "label": "Auto register environments"
+          "label": "Auto register environments",
+          "default": "all,build",
+          "preset": true
         },
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
-          "label": "Auto register resources"
+          "label": "Auto register resources",
+          "default": "alpine",
+          "preset": true
         }
       ]
     },
@@ -82,11 +86,15 @@
         },
         {
           "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
-          "label": "Auto register environments"
+          "label": "Auto register environments",
+          "default": "all,build",
+          "preset": true
         },
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
-          "label": "Auto register resources"
+          "label": "Auto register resources",
+          "default": "centos",
+          "preset": true
         }
       ]
     },
@@ -116,11 +124,15 @@
         },
         {
           "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
-          "label": "Auto register environments"
+          "label": "Auto register environments",
+          "default": "all,build",
+          "preset": true
         },
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
-          "label": "Auto register resources"
+          "label": "Auto register resources",
+          "default": "debian",
+          "preset": true
         }
       ]
     },
@@ -150,11 +162,15 @@
         },
         {
           "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
-          "label": "Auto register environments"
+          "label": "Auto register environments",
+          "default": "all,build",
+          "preset": true
         },
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
-          "label": "Auto register resources"
+          "label": "Auto register resources",
+          "default": "ubuntu",
+          "preset": true
         }
       ]
     },
@@ -184,11 +200,15 @@
         },
         {
           "name": "AGENT_AUTO_REGISTER_ENVIRONMENTS",
-          "label": "Auto register environments"
+          "label": "Auto register environments",
+          "default": "all,build",
+          "preset": true
         },
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
-          "label": "Auto register resources"
+          "label": "Auto register resources",
+          "default": "docker",
+          "preset": true
         }
       ]
     }
