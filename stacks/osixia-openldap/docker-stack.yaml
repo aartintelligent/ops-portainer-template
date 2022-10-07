@@ -5,9 +5,9 @@ services:
   openldap:
     image: docker.io/osixia/openldap:latest
     environment:
-      - LDAP_ORGANISATION=${LDAP_ORGANISATION?Variable not set}
-      - LDAP_DOMAIN=${DOMAIN?Variable not set}
-      - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD?Variable not set}
+      - LDAP_ORGANISATION="${LDAP_ORGANISATION?Variable not set}"
+      - LDAP_DOMAIN="${DOMAIN?Variable not set}"
+      - LDAP_ADMIN_PASSWORD="${LDAP_ADMIN_PASSWORD?Variable not set}"
     networks:
       - openldap-network
     volumes:
