@@ -5,7 +5,7 @@ services:
   openldap:
     image: docker.io/osixia/openldap:latest
     environment:
-      - LDAP_DOMAIN="${DOMAIN?Variable not set}"
+      - LDAP_DOMAIN="openldap.${DOMAIN?Variable not set}"
       - LDAP_ORGANISATION="${LDAP_ORGANISATION?Variable not set}"
       - LDAP_ADMIN_PASSWORD="${LDAP_ADMIN_PASSWORD?Variable not set}"
     networks:
@@ -13,8 +13,8 @@ services:
     volumes:
       - openldap-data:/openldap
     ports:
-      - 636:636
       - 389:389
+      - 636:636
     deploy:
       placement:
         constraints:
