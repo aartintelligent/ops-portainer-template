@@ -12,6 +12,9 @@ services:
       - openldap-network
     volumes:
       - openldap-data:/openldap
+    ports:
+      - 636:636
+      - 389:389
     deploy:
       placement:
         constraints:
