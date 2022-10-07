@@ -10,6 +10,8 @@ services:
       - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
       - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
+    volumes:
+      - docker-data:/certs
     networks:
       - docker-network
     deploy:
