@@ -23,15 +23,11 @@
         },
         {
           "name": "LDAP_ORGANISATION",
-          "label": "Ldap organisation"
-        },
-        {
-          "name": "LDAP_DOMAIN",
-          "label": "Ldap domain"
+          "label": "Organisation"
         },
         {
           "name": "LDAP_ADMIN_PASSWORD",
-          "label": "Ldap admin password"
+          "label": "Admin password"
         }
       ]
     },
