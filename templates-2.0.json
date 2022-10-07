@@ -49,6 +49,33 @@
     },
     {
       "type": 2,
+      "title": "Hashicorp Vault",
+      "description": "Secret provider",
+      "note": "",
+      "categories": [
+        "Hashicorp",
+        "Vault",
+        "Secret"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
+      "repository": {
+        "url": "https://github.com/aartintelligent/portainer-template",
+        "stackfile": "stacks/hashicorp-vault/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        },
+        {
+          "name": "VAULT_LOCAL_CONFIG",
+          "label": "Json config"
+        }
+      ]
+    },
+    {
+      "type": 2,
       "title": "Gocd Server",
       "description": "Pipeline to build your work",
       "note": "",
