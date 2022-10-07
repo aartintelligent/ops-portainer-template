@@ -5,7 +5,6 @@ services:
   vault:
     image: docker.io/vault:latest
     environment:
-      - VAULT_ADDR=https://vault.${DOMAIN?Variable not set}
       - VAULT_LOCAL_CONFIG=${VAULT_LOCAL_CONFIG?Variable not set}
     networks:
       - vault-network
