@@ -182,7 +182,7 @@
     },
     {
       "type": 2,
-      "title": "Gocd Agent Docker Dind",
+      "title": "Gocd Agent Docker",
       "description": "Pipeline agent",
       "note": "",
       "categories": [
