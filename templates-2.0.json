@@ -26,16 +26,16 @@
           "label": "Admin user"
         },
         {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin password"
+        },
+        {
           "name": "LDAP_GROUP",
           "label": "Group"
         },
         {
           "name": "LDAP_USER_DC",
           "label": "User DC"
-        },
-        {
-          "name": "ADMIN_PASSWORD",
-          "label": "Admin password"
         },
         {
           "name": "USER_NAMES",
