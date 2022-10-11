@@ -2,25 +2,6 @@ version: '3.3'
 
 services:
 
-  agent:
-    image: docker.io/gocd/gocd-agent-docker-dind:v22.2.0
-    environment:
-      - GO_SERVER_URL=${GO_SERVER_URL?Variable not set}
-      - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
-      - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
-      - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
-      - DOCKER_CERT_PATH=/certs/client:ro
-      - DOCKER_TLS_VERIFY=1
-    volumes:
-      - docker-certs-client:/certs/client
-    networks:
-      - docker-network
-    deploy:
-      placement:
-        constraints:
-          - node.role == worker
-          - node.platform.os == linux
-
   docker-dind:
     image: docker.io/docker:dind
     environment:
@@ -29,6 +10,25 @@ services:
       - docker-certs-ca:/certs/ca:rw,delegated
       - docker-certs-client:/certs/client:rw,delegated
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - docker-network
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+          - node.platform.os == linux
+
+  agent:
+    image: docker.io/gocd/gocd-agent-docker-dind:v22.2.0
+    environment:
+      - GO_SERVER_URL=${GO_SERVER_URL?Variable not set}
+      - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
+      - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
+      - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
+      - DOCKER_CERT_PATH=/certs:ro
+      - DOCKER_TLS_VERIFY=1
+    volumes:
+      - docker-certs-client:/certs
     networks:
       - docker-network
     deploy:
