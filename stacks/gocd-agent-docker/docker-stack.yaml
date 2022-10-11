@@ -9,7 +9,7 @@ services:
       - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
       - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
-      - DOCKER_TLS_CERTDIR=/certs
+      - DOCKER_TLS_CERTDIR=/certs:ro
       - DOCKER_TLS_VERIFY=1
     volumes:
       - docker-certs-client:/certs/client
@@ -26,8 +26,8 @@ services:
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
-      - docker-certs-ca:/certs/ca
-      - docker-certs-client:/certs/client
+      - docker-certs-ca:/certs/ca:rw,delegated
+      - docker-certs-client:/certs/client:rw,delegated
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - docker-network
