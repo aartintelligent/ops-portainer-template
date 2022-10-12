@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   portainer:
-    image: docker.io/portainer/portainer:latest
+    image: docker.io/portainer/portainer-ce:latest
     command: -H tcp://tasks.agent:9001 --tlsskipverify
     volumes:
       - portainer-data:/data
@@ -29,7 +29,7 @@ services:
         - traefik.http.services.portainer.loadbalancer.server.port=9000
 
   agent:
-    image: portainer/agent:latest
+    image: docker.io/portainer/agent:latest
     environment:
       AGENT_CLUSTER_ADDR: tasks.agent
     volumes:
