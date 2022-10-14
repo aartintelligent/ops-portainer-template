@@ -2,22 +2,6 @@ version: '3.3'
 
 services:
 
-  docker-dind:
-    image: docker.io/docker:dind
-    environment:
-      - DOCKER_TLS_CERTDIR=/certs
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - docker-certs-ca:/certs/ca:rw,delegated
-      - docker-certs-client:/certs/client:rw,delegated
-    networks:
-      - docker-network
-    deploy:
-      placement:
-        constraints:
-          - node.role == worker
-          - node.platform.os == linux
-
   agent:
     image: docker.io/gocd/gocd-agent-docker-dind:v22.2.0
     environment:
@@ -26,10 +10,10 @@ services:
       - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
       - DOCKER_TLS_VERIFY=1
-      - DOCKER_HOST=tcp://0.0.0.0:2376
+      - DOCKER_HOST=tcp://${DOCKER_HOST_TCP?Variable not set}
       - DOCKER_CERT_PATH=/certs:ro
     volumes:
-      - docker-certs-client:/certs
+      -   docker-certs-data-01:/certs
     networks:
       - docker-network
     deploy:
@@ -43,5 +27,5 @@ networks:
     attachable: true
 
 volumes:
-  docker-certs-ca:
-  docker-certs-client:
+  docker-certs-data-01:
+    external: true

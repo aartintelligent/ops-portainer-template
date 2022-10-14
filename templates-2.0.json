@@ -189,6 +189,10 @@
         {
           "name": "AGENT_AUTO_REGISTER_RESOURCES",
           "label": "Auto register resources"
+        },
+        {
+          "name": "DOCKER_HOST_TCP",
+          "label": "Tcp"
         }
       ]
     }
