@@ -192,7 +192,7 @@
         },
         {
           "name": "DOCKER_HOST_TCP",
-          "label": "Tcp"
+          "label": "TCP"
         }
       ]
     }
