@@ -11,9 +11,9 @@ services:
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
       - DOCKER_TLS_VERIFY=1
       - DOCKER_HOST=${DOCKER_HOST?Variable not set}
-      - DOCKER_CERT_PATH=/certs:ro
+      - DOCKER_CERT_PATH=/certs
     volumes:
-      - docker-certs-data-01:/certs
+      - docker-certs-data-01:/certs:ro
     networks:
       - docker-network
     deploy:
