@@ -14,7 +14,6 @@ services:
       - DOCKER_CERT_PATH=/certs:ro
     volumes:
       - docker-certs-data-01:/certs
-      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - docker-network
     deploy:
