@@ -13,7 +13,7 @@ services:
       - DOCKER_HOST=tcp://${DOCKER_HOST_TCP?Variable not set}
       - DOCKER_CERT_PATH=/certs:ro
     volumes:
-      -   docker-certs-data-01:/certs
+      - docker-certs-data-01:/certs
     networks:
       - docker-network
     deploy:
