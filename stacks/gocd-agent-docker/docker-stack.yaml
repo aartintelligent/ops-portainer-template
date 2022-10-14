@@ -25,8 +25,8 @@ services:
       - AGENT_AUTO_REGISTER_KEY=${AGENT_AUTO_REGISTER_KEY?Variable not set}
       - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
-      - DOCKER_CERT_PATH=/certs:ro
       - DOCKER_TLS_VERIFY=1
+      - DOCKER_CERT_PATH=/certs:ro
     volumes:
       - docker-certs-client:/certs
     networks:
