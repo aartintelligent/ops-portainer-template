@@ -191,8 +191,8 @@
           "label": "Auto register resources"
         },
         {
-          "name": "DOCKER_HOST_TCP",
-          "label": "TCP"
+          "name": "DOCKER_HOST",
+          "label": "Host"
         }
       ]
     }
