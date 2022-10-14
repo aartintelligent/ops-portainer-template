@@ -10,7 +10,7 @@ services:
       - AGENT_AUTO_REGISTER_ENVIRONMENTS=${AGENT_AUTO_REGISTER_ENVIRONMENTS?Variable not set}
       - AGENT_AUTO_REGISTER_RESOURCES=${AGENT_AUTO_REGISTER_RESOURCES?Variable not set}
       - DOCKER_TLS_VERIFY=1
-      - DOCKER_HOST=tcp://${DOCKER_HOST_TCP?Variable not set}
+      - DOCKER_HOST=${DOCKER_HOST?Variable not set}
       - DOCKER_CERT_PATH=/certs:ro
     volumes:
       - docker-certs-data-01:/certs
