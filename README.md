@@ -1,2 +1,2 @@
-# AArtIntelligent : Portainer Templates
+# Portainer Templates
 
