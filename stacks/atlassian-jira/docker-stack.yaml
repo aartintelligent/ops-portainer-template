@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+
+  atlassian-jira:
+    image: atlassian/jira-software:latest
+    volumes:
+      - jira-software-data:/var/atlassian/application-data/jira:rw,delegated
+    networks:
+      - jira-software-network
+      - traefik-network
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          - node.platform.os == linux
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-network
+        - traefik.constraint-label=traefik-proxy
+        - traefik.http.routers.jira-software-http.rule=Host(`jira.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.jira-software-http.entrypoints=http
+        - traefik.http.routers.jira-software-http.middlewares=https-redirect
+        - traefik.http.routers.jira-software-https.rule=Host(`jira.${DOMAIN?Variable not set}`)
+        - traefik.http.routers.jira-software-https.entrypoints=https
+        - traefik.http.routers.jira-software-https.tls=true
+        - traefik.http.routers.jira-software-https.tls.certresolver=le
+        - traefik.http.services.jira-software.loadbalancer.server.port=8080
+
+networks:
+  jira-software-network:
+    attachable: true
+  traefik-network:
+    external: true
+
+volumes:
+  jira-software-data:

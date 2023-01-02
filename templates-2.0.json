@@ -3,6 +3,28 @@
   "templates": [
     {
       "type": 2,
+      "title": "Atlassian Jira",
+      "description": "Jira Software Data Center helps the world’s best agile teams plan, track, and release great software at scale.",
+      "note": "",
+      "categories": [
+        "Atlassian",
+        "Jira"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/aartintelligent/portainer-template/master/logo/cubes.png",
+      "repository": {
+        "url": "https://github.com/aartintelligent/ops-portainer-template",
+        "stackfile": "stacks/atlassian-jira/docker-stack.yaml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain"
+        }
+      ]
+    },
+    {
+      "type": 2,
       "title": "Gocd Server",
       "description": "Pipeline to build your work",
       "note": "",
