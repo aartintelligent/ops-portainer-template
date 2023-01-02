@@ -29,7 +29,7 @@ services:
         - traefik.http.routers.jira-https.entrypoints=https
         - traefik.http.routers.jira-https.tls=true
         - traefik.http.routers.jira-https.tls.certresolver=le
-        - traefik.http.services.jira.loadbalancer.server.port=443
+        - traefik.http.services.jira.loadbalancer.server.port=8080
 
 networks:
   jira-network:
