@@ -9,10 +9,6 @@ services:
     networks:
       - jira-network
       - traefik-network
-    environment:
-      ATL_PROXY_NAME: jira.${DOMAIN?Variable not set}
-      ATL_PROXY_PORT: 8080
-      ATL_PROXY_SCHEME: https
     deploy:
       placement:
         constraints:
