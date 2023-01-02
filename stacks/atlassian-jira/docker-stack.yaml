@@ -6,6 +6,10 @@ services:
     image: atlassian/jira-software:latest
     volumes:
       - jira-data:/var/atlassian/application-data/jira
+    environment:
+      - X_PROXY_NAME=jira.${DOMAIN?Variable not set}
+      - X_PROXY_PORT=443
+      - X_PROXY_SCHEME=https
     networks:
       - jira-network
       - traefik-network
@@ -25,7 +29,7 @@ services:
         - traefik.http.routers.jira-https.entrypoints=https
         - traefik.http.routers.jira-https.tls=true
         - traefik.http.routers.jira-https.tls.certresolver=le
-        - traefik.http.services.jira.loadbalancer.server.port=8443
+        - traefik.http.services.jira.loadbalancer.server.port=443
 
 networks:
   jira-network:
