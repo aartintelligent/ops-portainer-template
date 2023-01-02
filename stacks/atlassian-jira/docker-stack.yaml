@@ -7,9 +7,9 @@ services:
     volumes:
       - jira-data:/var/atlassian/application-data/jira
     environment:
-      - X_PROXY_NAME=jira.${DOMAIN?Variable not set}
-      - X_PROXY_PORT=443
-      - X_PROXY_SCHEME=https
+      - SERVER_PROXY_NAME=jira.${DOMAIN?Variable not set}
+      - SERVER_PROXY_PORT=443
+      - SERVER_SCHEME=https
     networks:
       - jira-network
       - traefik-network
